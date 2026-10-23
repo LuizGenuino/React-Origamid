@@ -1,11 +1,11 @@
 import { useState } from "react"
+import Button from "./Components/Button"
 
 
 const App = () => {
     const booleanHook = useState(false)
+    // desestruturado (padrao)
     const [active, setActive] = useState(false)
-
-    console.log(booleanHook)
 
     return (
         <>
@@ -16,6 +16,11 @@ const App = () => {
             <button onClick={() => booleanHook[1](!booleanHook[0])} >Muda Status 1</button>
             <span> </span>
             <button onClick={() => setActive(!active)} >Muda Status 2</button>
+            <br />
+            <br />
+            <Button state={booleanHook[0]} setState={booleanHook[1]} text="Botão Muda Status 1" />
+            <span> </span>
+            <Button state={active} setState={setActive} text="Botão Muda Status 2" />
 
         </>
     )
