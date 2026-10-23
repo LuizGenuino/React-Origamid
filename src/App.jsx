@@ -1,11 +1,11 @@
+import Form from "./Form/Form"
 
 
 const App = () => {
 
     return (
         <>
-            <p>App React</p>
-            <button>Botão</button>
+            <Form />
         </>
     )
 }
