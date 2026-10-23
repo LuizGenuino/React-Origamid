@@ -8,10 +8,10 @@ const App = () => {
     const [active, setActive] = useState(false)
 
     const [count, setCount] = useState(1)
-    const [items, setItems] = useState(['Item 1'])
+    const [items, setItems] = useState((currentState) => ['Item ' + (count)])
 
     const handleClick = () => {
-        setCount(currentState => currentState + 1)
+        setCount(count + 1)
         setItems(currentState => {
             return [...currentState, 'Item ' + (count + 1)]
         })
