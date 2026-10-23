@@ -18,9 +18,9 @@ const App = () => {
             <button onClick={() => setActive(!active)} >Muda Status 2</button>
             <br />
             <br />
-            <Button state={booleanHook[0]} setState={booleanHook[1]} text="Botão Muda Status 1" />
+            <Button setState={booleanHook[1]} text="Botão Muda Status 1" />
             <span> </span>
-            <Button state={active} setState={setActive} text="Botão Muda Status 2" />
+            <Button setState={setActive} text="Botão Muda Status 2" />
 
         </>
     )

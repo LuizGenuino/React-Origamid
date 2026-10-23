@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Button({state, setState, text}) {
+function Button({ setState, text}) {
   return (
-     <button onClick={() => setState(!state)} >{text}</button>
+    // a função atualizadora armazena o valor do estado
+     <button onClick={() => setState((currentState) => !currentState)} >{text}</button>
   )
 }
 
