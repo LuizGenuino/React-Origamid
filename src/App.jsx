@@ -7,6 +7,7 @@ import Produto from "./Components/Produto"
 import Usuario from "./Components/Usuario"
 import { GlobalStorage } from "./GlobalContext"
 import Effect from "./Components/EffectAndStates"
+import CustomHook from "./Components/CustomHook"
 
 
 const App = () => {
@@ -17,6 +18,10 @@ const App = () => {
     return (
         <div>
             <p>App React</p>
+             <br></br>
+            <section>
+                <CustomHook/>
+            </section>
             <br></br>
             <section>
                 <p>Usando o UseContext</p>
