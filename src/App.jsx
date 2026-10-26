@@ -5,6 +5,7 @@ import MemoAndCallBack from "./Components/MemoAndCallBack"
 import UserContext from "./userContext"
 import Produto from "./Components/Produto"
 import Usuario from "./Components/Usuario"
+import { GlobalStorage } from "./GlobalContext"
 
 
 const App = () => {
@@ -71,11 +72,19 @@ const App = () => {
             <br></br>
             <section>
                 <p>Usando o UseContext</p>
+                <GlobalStorage>
+                    <Usuario />
+                    <Produto />
+                </GlobalStorage>
+            </section>
+            {/* <br></br>
+            <section>
+                <p>Usando o UseContext</p>
                 <UserContext.Provider value={{ nome: "Luiz" }}>
                     <Produto />
                     <Usuario />
                 </UserContext.Provider>
-            </section>
+            </section> */}
             <br></br>
             <section>
                 <MemoAndCallBack />
