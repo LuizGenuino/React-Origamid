@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Button from "./Components/Button"
 import Ref from "./Components/Ref"
+import MemoAndCallBack from "./Components/MemoAndCallBack"
 
 
 const App = () => {
@@ -64,6 +65,10 @@ const App = () => {
     return (
         <div style={{height: '200vh'}}>
             <p>App React</p>
+            <section>
+                <MemoAndCallBack />
+            </section>
+            <br></br>
             <section>
                 <Ref />
             </section>
