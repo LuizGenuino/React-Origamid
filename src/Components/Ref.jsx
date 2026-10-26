@@ -4,8 +4,23 @@ function Ref() {
     const video = useRef()
 
     const [comentario, setComentario] = useState([])
-    const [input, setInput] = useState('')
+    // const [input, setInput] = useState('')
     const inputElement = useRef('')
+
+    const [car, setCar] = useState(0)
+    const [notify, setNotify] = useState(null)
+    const timeoutRef = useRef()
+
+    const handleClickBtn = () => {
+        clearTimeout(timeoutRef.current)
+        setCar(car + 1)
+        setNotify('Item Adicionado ao Carrinho!')
+
+        // deve sempre salvar no ref.current
+        timeoutRef.current = setTimeout(()=> {
+            setNotify(null)
+        }, 2000)
+    }
 
     // aparece undefined pois essa linha executa antes do carregamento completo do componente
     console.log(video.current, "aparece undefined pois essa linha executa antes do carregamento completo do component")
@@ -26,7 +41,10 @@ function Ref() {
 
     return (
         <>
-            <div ref={video}>Ref</div>
+            <div ref={video}>useRef</div>
+            <br></br>
+            <p>{notify}</p>
+            <button onClick={handleClickBtn}>Adicionar no Carrinho ({car})</button>
             <div>
                 <ul>
                     {comentario.map((com, index) => (
