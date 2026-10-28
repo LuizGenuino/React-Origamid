@@ -5,8 +5,9 @@ const App = () => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [observation, setObservation] = useState('')
 
-    const [form, setForm] = useState({ name: '', email: '' })
+    const [form, setForm] = useState({ name: '', email: '', observation: '' })
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -30,6 +31,8 @@ const App = () => {
                 <input id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
                 <label htmlFor="name">Email</label>
                 <input id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                <label htmlFor="observation">Observação</label>
+                <textarea rows={4} id="observation" type="email" value={observation} onChange={e => setObservation(e.target.value)} />
                 <button>Enviar</button>
             </form>
             <br></br>
@@ -39,6 +42,8 @@ const App = () => {
                 <input id="name" type="text" value={form.name} onChange={handleChange} />
                 <label htmlFor="name">Email</label>
                 <input id="email" type="email" value={form.email} onChange={handleChange} />
+                <label htmlFor="observation">Observação</label>
+                <textarea rows={4} id="observation" type="email" value={form.observation} onChange={handleChange} />
                 <button>Enviar</button>
             </form>
         </>
