@@ -55,6 +55,7 @@ label {
 }
 
 input,
+select,
 textarea {
   display: block;
   border: 1px solid #ccc;
@@ -67,6 +68,7 @@ textarea {
 }
 
 input:focus,
+select:focus,
 textarea:focus {
   outline: none;
   border-color: var(--color);
