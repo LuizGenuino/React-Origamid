@@ -5,6 +5,8 @@ import NotFound from "./pages/NotFound"
 import { lazy, Suspense } from "react"
 
 const LazySuspense = lazy(() => import('./pages/LazyAndSuspense'))
+const Reducer = lazy(() => import('./pages/Reducer'))
+
 
 
 const App = () => {
@@ -16,8 +18,9 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="sobre" element={<Sobre />} />
                     <Route path="sobre/:id" element={<Sobre />} />
-                    <Route path="*" element={<NotFound />} />
                     <Route path="outros" element={<LazySuspense />} />
+                    <Route path="reducer" element={<Reducer />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Suspense>
         </BrowserRouter>
