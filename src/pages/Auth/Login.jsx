@@ -27,7 +27,8 @@ const Login = () => {
             <form action="" onSubmit={handleSubmit}>
                 <Input label="Usuário" type="text" name="username" {...username} />
                 <Input label="Senha" type="password" name="password" {...password} />
-                <Button>Entrar</Button>
+                <Button disabled={context.loading}>{context.loading ? 'Carregando...' : 'Entrar'}</Button>
+                {context.error && (<p>{context.error}</p>)}
             </form>
         </section>
     )
