@@ -1,35 +1,45 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Input from '../../components/Forms/Input'
 import Button from '../../components/Forms/Button'
+import useForm from '../../hooks/useForm'
+import { TOKEN_POST, USER_GET } from '../../../api'
 
 const Login = () => {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const username = useForm('text')
+    const password = useForm('password')
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    useEffect(() => {
+        const token = localStorage.getItem('dog@token')
+        if(token) {
+            getUser(token)
+        }
+    }, [])
 
-        fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ username, password })
-        }).then(response => {
-            console.log(response)
-            return response.json()
-        }).then(json => {
-            console.log(json)
-        })
+    const getUser = async (token) => {
+        const { url, options } = USER_GET(token)
+            const response = await fetch(url, options)
+            const json = await response.json()
+    }
 
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault()
+            const { url, options } = TOKEN_POST({ username: username.value, password: password.value })
+            const response = await fetch(url, options)
+            const json = await response.json()
+            localStorage.setItem('dog@token', json.token)
+            getUser(json.token)
+        } catch (error) {
+            console.error('Error logging in:', error)
+        }
     }
 
     return (
         <section>
             <h1>Login</h1>
             <form action="" onSubmit={handleSubmit}>
-                <Input label="Usuário" type="text" name="username" />
-                <Input label="Senha" type="password" name="password" />
+                <Input label="Usuário" type="text" name="username" {...username} />
+                <Input label="Senha" type="password" name="password" {...password} />
                 <Button>Entrar</Button>
             </form>
         </section>
