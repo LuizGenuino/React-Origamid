@@ -1,0 +1,32 @@
+.auth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    gap: 2rem;
+}
+
+.auth::before {
+    display: block;
+    content: '';
+    background: url(../../assets/login.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.forms {
+    max-width: 30rem;
+    padding: 1rem;
+}
+
+@media (max-width: 300px) {
+    .auth {
+        grid-template-columns: 1fr;
+    }
+
+    .auth::before {
+        display: none;
+    }
+
+    .forms {
+        max-width: 100%;
+    }
+}
