@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <nav className={`${styles.nav} container`}>
-                <Link className={styles.logo} to="/" aria-label='Dogs - Home'><Dogs /></Link>
+                <Link className={styles.logo} to="/conta" aria-label='Dogs - Home'><Dogs /></Link>
 
                 {context.data && context.data.email ? (
                     <Link className={styles.login} to="/conta">{context.data.nome}</Link>

@@ -13,7 +13,7 @@ import stylesBtn from '../../components/Forms/Button.module.css'
 const Login = () => {
     const context = useContext(UserContext)
     const username = useForm('text')
-    const password = useForm('password')
+    const password = useForm('pass')
 
 
     const handleSubmit = async (e) => {

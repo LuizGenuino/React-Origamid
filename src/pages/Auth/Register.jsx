@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import styles from './Register.module.css'
+import styles from './Login.module.css'
 import Input from '../../components/Forms/Input'
 import Button from '../../components/Forms/Button'
 import { Link } from 'react-router-dom'
@@ -39,12 +39,7 @@ const Register = () => {
                 <Button disabled={loading}>{loading ? 'Carregando...' : 'Cadastrar'}</Button>
                 {error && (<Error error={error} />)}
             </form>
-            <Link className={styles.esqueci} to="/login/esqueci">Esqueci minha senha</Link>
-            <div className={styles.cadastro}>
-                <h2 className={styles.subtitle}>Cadastre-se</h2>
-                <p >Ainda não possui conta? Cadastre-se no site.</p>
-                {/* <Link className={stylesBtn.button} to="/login/registrar">Cadastre-se</Link> */}
-            </div>
+            <Link className={styles.esqueci} to="/login">Voltar ao Login</Link>
         </section>
     )
 }
