@@ -60,11 +60,11 @@ export const UserStorage = ({ children }) => {
             const { token } = await response.json()
             localStorage.setItem('dog@token', token)
             await getUser(token)
+            navigate('/conta')
         } catch (error) {
             setError(error.message)
             console.error('Error logging in:', error)
-            setLogin(true)
-            navigate('/conta')
+            setLogin(false)
 
         } finally {
             setLoading(false)
