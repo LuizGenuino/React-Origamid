@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/UserContext'
 import useForm from '../../hooks/useForm'
 import { USER_POST } from '../../../api'
 import useFetch from '../../hooks/useFetch'
-import Error from '../../components/helpers/Error'
+import Error from '../../helpers/Error'
 
 const Register = () => {
 

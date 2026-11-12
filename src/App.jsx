@@ -6,7 +6,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Auth/Auth"
 import { UserStorage } from "./contexts/UserContext"
 import User from "./pages/User/User"
-import ProtectedRouter from "./components/helpers/ProtectedRouter"
+import ProtectedRouter from "./helpers/ProtectedRouter"
 
 const App = () => {
 
