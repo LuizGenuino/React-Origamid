@@ -17,7 +17,7 @@
     padding: 1rem;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 40rem) {
     .auth {
         grid-template-columns: 1fr;
     }
