@@ -11,7 +11,7 @@ import styles from './Auth.module.css'
 const Auth = () => {
     const context = useContext(UserContext)
 
-    if (context.login) {
+    if (context && context.login) {
         return <Navigate to="/conta" />
     }
 
