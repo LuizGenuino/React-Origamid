@@ -4,7 +4,7 @@ import PhotoCommentsForm from './PhotoCommentsForm'
 import styles from './PhotoComments.module.css'
 
 
-const PhotoComments = ({ id, comments }) => {
+const PhotoComments = ({ id, comments, single }) => {
     const [commentsList, setCommentsList] = useState(() => comments)
     const { login } = useContext(UserContext)
     const commentsSection = useRef(null)
@@ -15,13 +15,13 @@ const PhotoComments = ({ id, comments }) => {
 
     return (
         <>
-            <ul ref={commentsSection} className={styles.comments}>
+            <ul ref={commentsSection} className={`${styles.comments} ${single ? styles.single : ''}`}>
                 {commentsList.map(comment => <li key={comment.comment_ID}>
                     <b>{comment.comment_author}:</b>
                     <span>{comment.comment_content}</span>
                 </li>)}
             </ul>
-            {login && <PhotoCommentsForm id={id} setCommentsList={setCommentsList} />}
+            {login && <PhotoCommentsForm id={id} setCommentsList={setCommentsList} single />}
         </>
     )
 }
