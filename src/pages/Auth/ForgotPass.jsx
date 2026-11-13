@@ -25,7 +25,7 @@ const ForgotPass = () => {
         }
     }
     return (
-        <section>
+        <section className="animeLeft">
             <h1 className='title'>Perdeu a Senha?</h1>
             {data ?
                 <p style={{ color: 'green', fontSize: '2rem', fontWeight: 'bold' }} >{data}</p>

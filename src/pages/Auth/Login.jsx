@@ -8,6 +8,7 @@ import Error from '../../helpers/Error'
 import { Link } from 'react-router-dom'
 import styles from './Login.module.css'
 import stylesBtn from '../../components/Forms/Button.module.css'
+import Head from '../../helpers/Head'
 
 
 const Login = () => {
