@@ -28,7 +28,6 @@ const Register = () => {
 
     }
 
-    console.log(error)
     return (
         <section className="animeLeft">
             <h1 className='title'>Cadastre-se</h1>
