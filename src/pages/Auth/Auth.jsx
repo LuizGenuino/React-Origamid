@@ -6,6 +6,7 @@ import ForgotPass from './ForgotPass'
 import ResetPass from './ResetPass'
 import { UserContext } from '../../contexts/UserContext'
 import styles from './Auth.module.css'
+import NotFound from '../NotFound'
 
 
 const Auth = () => {
@@ -23,6 +24,7 @@ const Auth = () => {
                     <Route path='registrar' element={<Register />} />
                     <Route path='esqueci' element={<ForgotPass />} />
                     <Route path='resetar' element={<ResetPass />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </section >

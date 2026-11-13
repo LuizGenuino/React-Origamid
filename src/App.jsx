@@ -9,6 +9,7 @@ import User from "./pages/User/User"
 import ProtectedRouter from "./helpers/ProtectedRouter"
 import Photo from "./pages/Photo"
 import UserProfile from "./pages/UserProfile"
+import NotFound from "./pages/NotFound"
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
                         <Route path="conta/*" element={<ProtectedRouter><User /></ProtectedRouter>} />
                         <Route path="foto/:id" element={<Photo />} />
                         <Route path="perfil/:user" element={<UserProfile />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                     <Footer />
                 </UserStorage>
