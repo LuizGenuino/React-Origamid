@@ -14,10 +14,11 @@ import NotFound from "./pages/NotFound"
 const App = () => {
 
     return (
-        <>
+        <div className="app">
             <BrowserRouter>
                 <UserStorage>
                     <Header />
+                    <main className="appBody">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="login/*" element={<Login />} />
@@ -26,10 +27,11 @@ const App = () => {
                         <Route path="perfil/:user" element={<UserProfile />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
+                    </main>
                     <Footer />
                 </UserStorage>
             </BrowserRouter>
-        </>
+        </div>
     )
 }
 
