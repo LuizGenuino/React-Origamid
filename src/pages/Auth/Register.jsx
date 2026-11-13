@@ -8,6 +8,7 @@ import useForm from '../../hooks/useForm'
 import { USER_POST } from '../../../api'
 import useFetch from '../../hooks/useFetch'
 import Error from '../../helpers/Error'
+import Head from '../../helpers/Head'
 
 const Register = () => {
 
@@ -30,6 +31,7 @@ const Register = () => {
 
     return (
         <section className="animeLeft">
+            <Head  title="Criar Conta" description=""/>
             <h1 className='title'>Cadastre-se</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <Input label="Usuário" type="text" name="username" {...username} />

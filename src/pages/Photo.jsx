@@ -6,6 +6,7 @@ import { PHOTO_GET } from '../../api'
 import Error from '../helpers/Error'
 import Loading from '../helpers/Loading'
 import PhotoContent from '../components/Photo/PhotoContent'
+import Head from '../helpers/Head'
 
 
 const Photo = () => {
@@ -23,6 +24,7 @@ const Photo = () => {
     if (data) {
         return (
             <section className='container mainContainer'>
+            <Head  title={data.photo.title} description=""/>
                 <PhotoContent data={data} single/>
             </section>
         )
